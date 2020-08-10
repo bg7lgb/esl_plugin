@@ -1,6 +1,5 @@
 group 'com.bg7lgb.esl_plugin'
 version '1.0'
-
 buildscript {
     repositories {
         google()
@@ -11,23 +10,24 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.5.0'
     }
 }
-
 rootProject.allprojects {
     repositories {
         google()
         jcenter()
     }
 }
-
 apply plugin: 'com.android.library'
-
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
     }
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+dependencies {
+    implementation files('libs/NFC.jar')
 }
